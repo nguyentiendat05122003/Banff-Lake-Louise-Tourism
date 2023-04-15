@@ -98,7 +98,7 @@ html *::-webkit-scrollbar-track {
 }
 
 /* Key frames */
-@keyframes ShowInOut{
+/* @keyframes ShowInOut{
     from{
         opacity: 0;
         background-color: transparent;
@@ -109,7 +109,7 @@ html *::-webkit-scrollbar-track {
         background-color: #fff;
         transform: translateX(-100%);
     }
-}
+} */
 @keyframes ShowInOut{
     from{
         opacity: 0;
@@ -120,5 +120,23 @@ html *::-webkit-scrollbar-track {
         opacity: 1;
         background-color: #fff;
         transform: translateY(0);
+    }
+}
+
+@keyframes HeightAnimation{
+    from{
+        opacity: 0;
+        height: 0;
+        display: none;
+    }
+    to{
+        opacity: 0.5;
+        height: 50%;
+        display: block;
+    }
+    to{
+        opacity: 1;
+        height: auto;
+        display: block;
     }
 }
