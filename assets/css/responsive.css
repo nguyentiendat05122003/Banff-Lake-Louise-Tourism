@@ -1,0 +1,126 @@
+/* MOBILE AND TABLET */
+@media screen and (max-width:1023px) {
+    :root{
+        --height-mainHeader:580px;
+    }
+    .hide-on-mobile-and-tablet{
+        display: none;
+    }
+    .main-header{
+        padding-top: 0;
+    }
+    .navbar_header_item_logo{
+        width: 54px;
+        height: 62px;
+    }
+    .icon-svg-search,.icon-svg-save{
+        width: 22px;
+        height: 22px;
+    }
+    .isShow{
+        display: block;
+    }
+    .navbar_header_item.isFull{
+        flex:1;
+        text-align: center;
+    }
+    .modal-menu{
+        top:90px;
+    }
+}
+/* TABLET */
+@media screen and (min-width: 740px) and (max-width:1023px){
+    :root{
+        --height-mainHeader:415px;
+        --padding-page:40px;
+        --heading-size:5.4rem;
+        --position-left:15%;
+    }
+    .hide-on-tablet{
+        display: none;
+    }
+    .main_slider{
+    }
+}
+/* MOBILE */
+@media screen and (max-width : 739px) {
+    /* html::-webkit-scrollbar {
+        display: none;
+    } */
+    :root{
+        --height-mainHeader:100vh;
+        --padding-page:6px;
+        --heading-size:4.6rem;
+        --position-left:50%;
+        --line-height:4.8rem;
+        --padding-modal-menu:24px;
+    }
+    .hide-on-mobile{
+        display: none;
+    }
+    .main_slider{
+        width: 571px;
+    }
+    .main_slider_image{
+        width: 100%;
+        aspect-ratio: 388/610;  
+        object-fit: cover;
+        transform: scale(1);
+    }
+    .navbar_button_menu{
+        margin-left: 12px;
+    }
+    .modal-menu.show-in-mobile{
+        display: flex;
+    }
+}
+@media screen and (max-width : 414px) {
+    :root{
+        --height-mainHeader:100px;
+    }
+    .slider{
+        margin-top: 10px;
+    }
+    .main_slider{
+        width: 386px;
+    }
+}
+@media screen and (max-width:376px) {
+    :root{
+        --height-mainHeader:100px;
+    }
+    .slider{
+        margin-top: 10px;
+    }
+    .main_slider{
+        width: 347px;
+    }
+}
+
+@media screen and (max-width :320px) {
+    :root{
+        --heading-size:4rem;
+        --line-height:4.6rem;
+    }
+    .main_slider{
+        width: 291px;
+    }
+    .season-button-text {
+        font-size: 1.3rem;
+        padding: 0 2px;
+    }
+}
+/* PC LOW */
+@media screen and (min-width: 1023px) and (max-width:1160px){
+    :root{
+        --height-mainHeader:556px;
+        --padding-page:40px;
+    }
+    .navbar_header_item_logo{
+        width: 54px;
+        height: 62px;
+    }
+    .navbar_header_item:first-child{
+        margin-right: 35px;
+    }
+}

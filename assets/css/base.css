@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'gilroy',sans-serif;
+}
+
+html{
+    font-size:62.5%;
+}
+:root{
+    --sub-family:'Work Sans',sans-serif;
+    --primary-color:rgb(59, 154, 164);
+    --border-color:rgb(42, 110, 117);
+    --sub-primary:rgb(42, 110, 117);
+    --background-color:#f2eee9;
+    --logo-color:#413242;
+    --text-color:rgb(38,38,38);
+    --white-color:rgb(255,255,255);
+    --height-subHeader : 42px;
+    --height-mainHeader:100vh;
+    --height-navHeader : 100px;
+    --season-menu-width:436px;
+    --season-menu-height:48px;
+    --padding-page:74px;
+    --heading-size:6.5rem;
+    --position-left:10%;
+    --line-height:6.9rem;
+    --padding-modal-menu:40px;
+}
+/* Font */
+@font-face {
+    font-family: 'gilroy';
+    font-weight: 600;
+    src: url('../../assets/font/font.woff2');
+}
+
+@font-face {
+    font-family: 'gilroy';
+    font-weight: 500;
+    src: url('../../assets/font/font\ \(1\).woff2');
+}
+@font-face {
+    font-family: 'gilroy';
+    font-weight: 400;
+    src: url('../../assets/font/font\ \(2\).woff2');
+}
+
+/* Reset CSS */
+ol, ul {
+	list-style: none;
+}
+button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+/* Scrollbar */
+/* html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, .06);
+}
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+} */
+
+.btn{
+    font-family: gilroy, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2.8rem;
+    letter-spacing: 0.15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    text-decoration: none;
+    border-width: 2px;
+    border-style: solid;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    transition: all 0.2s ease 0s;
+    padding: 8px 30px;
+    cursor: pointer;
+}
+
+/* Key frames */
+@keyframes ShowInOut{
+    from{
+        opacity: 0;
+        background-color: transparent;
+        transform: translateX(0);
+    }
+    to{
+        opacity: 1;
+        background-color: #fff;
+        transform: translateX(-100%);
+    }
+}
+@keyframes ShowInOut{
+    from{
+        opacity: 0;
+        background-color: transparent;
+        transform: translateY(-50%);
+    }
+    to{
+        opacity: 1;
+        background-color: #fff;
+        transform: translateY(0);
+    }
+}
