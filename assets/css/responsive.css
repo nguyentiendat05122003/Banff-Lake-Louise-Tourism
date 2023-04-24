@@ -2,6 +2,8 @@
 @media screen and (max-width:1023px) {
     :root{
         --height-mainHeader:580px;
+        --margin-arrow:0px;
+        --margin-tab:2.4rem;
     }
     .hide-on-mobile-and-tablet{
         display: none;
@@ -35,6 +37,7 @@
         --padding-page:40px;
         --heading-size:5.4rem;
         --position-left:15%;
+        --title-section:3.4rem;
     }
     .hide-on-tablet{
         display: none;
@@ -54,6 +57,8 @@
         --position-left:50%;
         --line-height:4.8rem;
         --padding-modal-menu:24px;
+        --title-section:2.8rem;
+        --left-dot:28%;
     }
     .hide-on-mobile{
         display: none;
@@ -72,6 +77,10 @@
     }
     .modal-menu.show-in-mobile{
         display: flex;
+    }
+    .inspired_wrapper{
+        padding-right: 0px !important;
+        padding-left: 16px;
     }
 }
 @media screen and (max-width : 414px) {
@@ -101,6 +110,7 @@
     :root{
         --heading-size:4rem;
         --line-height:4.6rem;
+        --title-section:2.4rem;
     }
     .main_slider{
         width: 291px;

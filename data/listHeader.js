@@ -1,4 +1,4 @@
-const LIST_DATA = [
+const LIST_HEADER = [
   {
     id: 1,
     title: "About This Place",
@@ -12,9 +12,15 @@ const LIST_DATA = [
       "Stories & Blog",
     ],
     images: [
-      "assets/image/AboutThisPlace/Place1.jpg",
-      "assets/image/AboutThisPlace/Place2.jpg",
-      "assets/image/AboutThisPlace/Place3.jpg",
+      {
+        url: "assets/image/AboutThisPlace/Place1.jpg",
+        text: "Discover The Lakes",
+      },
+      {
+        url: "assets/image/AboutThisPlace/Place2.jpg",
+        text: "Buy Your Park Pass",
+      },
+      { url: "assets/image/AboutThisPlace/Place3.jpg", text: "Read The Blog" },
     ],
   },
   {
@@ -30,9 +36,18 @@ const LIST_DATA = [
       "Stories & Blog",
     ],
     images: [
-      " assets/image/VisitorInfo/VisitorInfo1.jpg",
-      " assets/image/VisitorInfo/VisitorInfo2.jpg",
-      " assets/image/VisitorInfo/VisitorInfo3.jpg",
+      {
+        url: "assets/image/VisitorInfo/VisitorInfo1.jpg",
+        text: "Banff National Park",
+      },
+      {
+        url: "assets/image/VisitorInfo/VisitorInfo2.jpg",
+        text: "Speak To A Local Expert",
+      },
+      {
+        url: "assets/image/VisitorInfo/VisitorInfo3.jpg",
+        text: "Buy Your Park Pass",
+      },
     ],
   },
   {
@@ -49,10 +64,16 @@ const LIST_DATA = [
       "Events & Festivals",
     ],
     images: [
-      "assets/image/ThingsToDo/ThingsToDo1.jpg",
-      "assets/image/ThingsToDo/ThingsToDo2.jpg",
-      "assets/image/ThingsToDo/ThingsToDo3.jpg",
+      {
+        url: "assets/image/ThingsToDo/ThingsToDo1.jpg",
+        text: "Get Trip Ideas",
+      },
+      { url: "assets/image/ThingsToDo/ThingsToDo2.jpg", text: "Browse Events" },
+      {
+        url: "assets/image/ThingsToDo/ThingsToDo3.jpg",
+        text: "Experience Wellness",
+      },
     ],
   },
 ];
-export default LIST_DATA;
+export default LIST_HEADER;

@@ -30,6 +30,10 @@ html{
     --position-left:10%;
     --line-height:6.9rem;
     --padding-modal-menu:40px;
+    --title-section:4.0rem;
+    --margin-arrow:147px;
+    --margin-tab:32px;
+    --left-dot:50%;
 }
 /* Font */
 @font-face {
