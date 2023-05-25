@@ -1,6 +1,7 @@
 import LIST_HEADER from "./data/listHeader.js";
 import LIST_SLIDER from "./data/listSlider.js";
 import LIST_INSPIRED from "./data/listInspired.js";
+import LIST_STORIES from "./data/listStories.js";
 const buttonNavBarMenu = document.querySelector(".navbar_button_menu");
 const navBarIconCenter = document.querySelector(".icon-bars-center");
 const navBarIconTop = document.querySelector(".icon-bars-top");
@@ -21,18 +22,17 @@ const seasonDesc = document.querySelector(".main_slider_button_select_season");
 const seasonItem = document.querySelectorAll(".season_item");
 const seasonMenu = document.querySelector(".season_menu");
 const inspiredTabWrapper = document.querySelector(".inspired_tab_list_title");
+const loginBtn = document.querySelector(".sub_header_item-login");
+const btnCloseLogin = document.querySelector(".modal-login-close");
 const htmlWidth = document.documentElement.offsetWidth;
 const style = getComputedStyle(document.body);
+const modalLogin = document.querySelector(".modal-login");
 let depWindow = 4;
 let inspiredWrapperScroll;
-const inspiredScroll = document.querySelector(
-  ".inspired_data_trip_list-scroll"
-);
 const inspiredContentWrapper = document.querySelector(
   ".inspired_tab_list_data"
 );
 let inspiredTabs;
-let inspiredContent;
 let inspiredContentList;
 let navBarTitleMobiles;
 let templateNavbarListPC;
@@ -242,7 +242,6 @@ const app = {
       this.renderInspiredContent(0);
     }
     if (htmlWidth > 415 && htmlWidth < 1024) {
-      console.log(1);
       this.renderInspiredContent(2);
     } else {
       this.renderInspiredContent(depWindow);
@@ -295,11 +294,15 @@ const app = {
     }
     //handle click show content navbar header in pc
     if (templateNavbarListPC) {
+      //tab header
       const tabsItemHeaderPC = document.querySelectorAll(
         ".navbar_header_item_button-tab"
       );
+      //tab content
       const modalListPC = document.querySelectorAll(".navbar_header_menu-pc");
+
       tabsItemHeaderPC.forEach((item) => {
+        //tag content của từng item
         const parentTab = item.parentElement.nextElementSibling;
         if (parentTab.classList.contains("isShow")) {
           parentTab.classList.remove("isShow");
@@ -312,7 +315,9 @@ const app = {
           if (itemActive) {
             itemActive.classList.remove("isActive");
           }
+          //tag content của tag header đấy
           const modalPC = item.parentElement.nextElementSibling;
+          //giao diện
           const listText = modalPC.querySelector(".navbar_header_menu-pc-list");
           const listImage = modalPC.querySelector(
             ".navbar_header_menu-pc-list-image"
@@ -335,10 +340,8 @@ const app = {
             listText.classList.toggle("isShow");
             listImage.classList.toggle("isShow");
           }, 100);
-          if (!!modalListPC) {
-            if (itemActive) {
-              itemActive.classList.remove("isActive");
-            }
+          if (itemActive) {
+            itemActive.classList.remove("isActive");
           }
         };
       });
@@ -499,6 +502,12 @@ const app = {
           }px`;
         }
       }
+      inspiredWrapperScroll = document.querySelector(".inspired_data.isShow");
+      let dots = inspiredWrapperScroll.querySelectorAll(".dot");
+      let elementScroll = inspiredWrapperScroll.querySelector(
+        ".inspired_data_trip_list-scroll.row"
+      );
+      handleClickDot(elementScroll, dots, 267);
     }
     //resize window
     window.onresize = (e) => {
@@ -510,7 +519,7 @@ const app = {
     let elementScroll = inspiredWrapperScroll.querySelector(
       ".inspired_data_trip_list-scroll.row"
     );
-    function handleClickDot(elementScroll, dots) {
+    function handleClickDot(elementScroll, dots, tmpScroll) {
       dots.forEach((dot, index) => {
         dot.onclick = () => {
           let dotActive = dot.parentElement.querySelector(".dot_active");
@@ -520,6 +529,15 @@ const app = {
               indexActive = index;
             }
           });
+          if (!!tmpScroll) {
+            tmp = tmpScroll;
+          }
+          if (
+            document.documentElement.clientWidth < 768 &&
+            document.documentElement.clientWidth > 375
+          ) {
+            tmp = 670;
+          }
           dotActive.classList.remove("dot_active");
           if (index === 0) {
             let scroll = tmp * (dots.length - 1);
@@ -534,7 +552,6 @@ const app = {
             return;
           }
           if (index < indexActive) {
-            console.log(tmp);
             elementScroll.scrollLeft -= tmp;
             dot.classList.add("dot_active");
           } else if (index > indexActive) {
@@ -546,36 +563,29 @@ const app = {
         };
       });
     }
-    handleClickDot(elementScroll, dots);
-    //handle slider mousemove
-    // const rect = sliderWrapper.getBoundingClientRect();
-    // var mouse = { x: 0, y: 0, moved: false };
-    // console.log(sliderElement);
-    // sliderWrapper.addEventListener("mousemove", (e) => {
-    //   mouse.x = e.clientX - rect.left;
-    //   mouse.y = e.clientY - rect.top;
-    // });
-    // if (htmlWidth < 414) {
-    //   this.renderInspiredContent(0);
-    // }
-    // if (htmlWidth > 415 && htmlWidth < 1024) {
-    //   this.renderInspiredContent(1);
-    // } else {
-    //   this.renderInspiredContent(depWindow);
-    // }
-    //prevent wheel
-    // function detectTrackPad(e) {
-    //   var isTrackPad = false;
-    //   if (e.wheelDeltaY) {
-    //     if (Math.abs(e.wheelDeltaY) !== 120) {
-    //       isTrackPad = true;
-    //     }
-    //   } else if (e.deltaMode === 0) {
-    //     isTrackPad = true;
-    //   }
-    // }
-    // document.addEventListener("mousewheel", detectTrackPad, false);
-    // document.addEventListener("DOMMouseScroll", detectTrackPad, false);
+    handleClickDot(elementScroll, dots, tmp);
+
+    //handle click login
+    loginBtn.onclick = (e) => {
+      modalLogin.classList.remove("isHidden");
+      modalLogin.classList.add("isShow");
+      document.body.classList.add("isNonScroll");
+    };
+    btnCloseLogin.onclick = (e) => {
+      modalLogin.classList.add("isHidden");
+      modalLogin.classList.remove("isShow");
+      document.body.classList.remove("isNonScroll");
+    };
+    document.body.onclick = (e) => {
+      if (
+        !e.target.closest(".sub_header_item-login") &&
+        !e.target.closest(".modal-wrapper")
+      ) {
+        modalLogin.classList.add("isHidden");
+        modalLogin.classList.remove("isShow");
+        document.body.classList.remove("isNonScroll");
+      }
+    };
   },
   start() {
     this.render();

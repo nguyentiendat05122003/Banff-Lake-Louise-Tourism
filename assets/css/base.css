@@ -16,6 +16,7 @@ html{
     --primary-color:rgb(59, 154, 164);
     --border-color:rgb(42, 110, 117);
     --sub-primary:rgb(42, 110, 117);
+    --sub-background:#00373D;
     --background-color:#f2eee9;
     --logo-color:#413242;
     --text-color:rgb(38,38,38);
@@ -34,6 +35,7 @@ html{
     --margin-arrow:147px;
     --margin-tab:32px;
     --left-dot:50%;
+    --padding-under-inspired:30px 40px;
 }
 /* Font */
 @font-face {

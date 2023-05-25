@@ -29,6 +29,12 @@
     .modal-menu{
         top:90px;
     }
+    .btn-accommodation{
+        display: none;
+    }
+    .footer-signUp{
+        margin-bottom: 15px;
+    }
 }
 /* TABLET */
 @media screen and (min-width: 740px) and (max-width:1023px){
@@ -44,6 +50,23 @@
     }
     .main_slider{
     }
+    .featured-Stories-img{
+        width: 352px;
+        height: 512px;
+    }
+    .featured-Stories-info{
+        max-width: 296px;
+    }
+    .featured-Stories-info-heading{
+        font-size: 3.4rem;
+    }
+    .btn-featured-Stories{
+        padding: 8px 8px;
+    }
+    .featured-Stories-banner{
+        bottom: 12px;
+    }
+    
 }
 /* MOBILE */
 @media screen and (max-width : 739px) {
@@ -59,6 +82,7 @@
         --padding-modal-menu:24px;
         --title-section:2.8rem;
         --left-dot:28%;
+        --padding-under-inspired:20px 18px;
     }
     .hide-on-mobile{
         display: none;
@@ -81,6 +105,60 @@
     .inspired_wrapper{
         padding-right: 0px !important;
         padding-left: 16px;
+    }
+    .btn-under-inspired{
+        left:20px;
+        bottom: 10px;
+    }
+    .featured-Stories-content{
+        flex-direction: column-reverse;
+    }
+    .featured-Stories-info-heading{
+        font-size: 2.4rem;
+    }
+    .featured-Stories-info-text{
+        font-size: 1.6rem;
+    }
+    .featured-Stories-banner{
+        aspect-ratio: 1092/768;
+    }
+    .featured-Stories-img{
+        min-height: 0;
+        width: 267px;
+        height: 188px;
+    }
+    .featured-Stories-banner{
+       bottom: auto;
+       top:-40px;
+       right: 7%;
+    }
+    .btn-featured-Stories{
+        padding: 8px 10px;
+    }
+    .featured-Stories-banner-dots{
+        right: 20%;
+    }
+    .featured-Stories-info{
+        margin-top: 140px;
+    }
+    .footer-main{
+        padding: 50px 10px;
+    }
+    .featured-Stories {
+        margin-top: 150px;
+    }
+    .footer-btn{
+        padding: 8px 18px;
+    }
+    .footer-item{
+        margin-top: 12px;
+    }
+    .footer-end{
+        padding-top:27px;
+        padding-bottom: 80px;
+    }
+    .dot-wrapper{
+        width: 60%;
     }
 }
 @media screen and (max-width : 414px) {
@@ -114,6 +192,9 @@
     }
     .main_slider{
         width: 291px;
+    }
+    .season-button{
+        min-width: 160px;
     }
     .season-button-text {
         font-size: 1.3rem;
